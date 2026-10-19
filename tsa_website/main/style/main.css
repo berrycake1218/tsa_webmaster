@@ -1,0 +1,561 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#banner {
+    /*background-image: url("https://i.pinimg.com/736x/ac/c5/fc/acc5fc08083f97694ffd84d0e72e25d7.jpg");*/
+    background-image: url("background.jpg.jpg"); /*TEMPORARY BANNER*/
+    background-size: 80%; /*Banner size to zoom in n zoom out*/
+    background-position: 50% 20%; /*FIrst num is left right n second num is up down*/
+    height: 300px;
+    margin-left: -30px;
+    margin-right: -40px;
+}
+
+.home_body main{
+    min-height: 100vh;
+    background-color: #e9edfc;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #222222;
+
+    margin-left: 240px;
+    padding-top: 0px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/*HOME PAGE CSS*/
+.home_body {
+    background-image: grey;
+    background-size: 60%;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    /*background-color: #f1d9d9;*/
+}
+.hero {
+    min-height: 160px;
+    display: flex;
+    justify-content: center; /*These two center stuff the top one centers horizontally*/
+    align-items: center; /*This one centers vertically*/
+}
+.hero_content{
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    color: white;
+}
+.hero_content h2{
+    font-size: 50px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+.hero_content p{
+    font-size: 22px;
+    color: #b6c3e7;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: auto;
+    background-color: rgba(255, 250, 248, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/*SIDEBAR CODE*/
+aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 270px;
+    height: 100vh;
+    padding: 25px;
+    background-color: #a6c1e4;
+    color: white;
+    font-size: 25px;
+}
+
+aside h2 {
+    margin-bottom: 30px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*navigation links */
+nav a {
+    display: block;
+    padding: 15px;
+    background-color: #c2d7f3;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+
+    transition: 0.3s;
+}
+
+/*Hover effect*/
+nav a:hover {
+    color: black;
+}
+
+nav > ul > li {
+    margin: 20px 0;
+}
+
+.dropdown {
+    position: relative;
+}
+
+
+/*Hidden dropdown menu by default, will be shown when hovering over Lessons*/
+.dropdown_menu {
+    position: absolute;
+    left: 200px;
+    top: 0;
+    width: 170px;
+    padding: 10px;
+    background-color: #a6c1e4;
+    border-radius: 10px;
+    list-style: none;
+
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateX(-15px);
+    transition: /*Animation for the dropdown menu to appear smoothly*/
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+/*Show dropdown when hovering over Lessons*/
+.dropdown:hover .dropdown_menu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateX(0);
+}
+
+
+/*PROFILE PAGE !!!!!!*/
+/*Card styling*/
+.profile_body{
+    min-height: 100vh;
+    margin: 0;
+    background-color: #e9edfc;
+    background-image: linear-gradient(rgba(225, 206, 203, .24) 1px, transparent 1px), linear-gradient(90deg, rgba(225, 206, 203, .24) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+.profile_body main.profile_screen{
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+.profile_card {
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+    box-shadow: 0 15px 45px rgba(60, 85, 130, 0.12);
+    overflow: hidden;
+}
+.profile_card h1{
+    margin-bottom: 15px;
+    font-size: 60px;
+    color: #6d8fc4;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+.profile_card p { /*What should we call you? Nice to meet you... text styling*/
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    color: #6d8fc4;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+.profile_card label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/*Username styling*/
+#username {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 2px solid #c2d7f3;
+    border-radius: 10px;
+    font-size: 18px;
+}
+input::placeholder{ /*Username placeholder*/
+    text-align: center;
+}
+#username:focus{
+    outline: 3px solid #dce8fa;
+    border-color: #6d8fc4;
+}
+
+/*Transition styles*/
+.profile_step{
+    display: none;
+}
+.profile_step.active{ /*TRANSITION ANIMATION*/
+    display: block;
+    animation: stepEntrance 0.55s ease both;
+}
+@keyframes stepEntrance{ /*TRANSITION ANIMATION, improve LATER!!!*/
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.step_label{
+    margin-bottom: 15px;
+    color: #6d8fc4;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/*Error styling*/
+.form_error{
+    min-height: 20px;
+    margin: 8px 0 16px;
+    color: #b4233b;
+    font-size: 14px;
+}
+
+/*Continue button styling*/
+#continue_button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #a6c1e4;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+#continue_button:hover {
+    background-color: #8bb0e0;
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+}
+#continue_button:active{
+    transform: scale(0.96);
+}
+
+/*AVATAR SELECTION*/
+.avatar_selection{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0 15px;
+}
+.avatar_option{
+    padding: 14px;
+    border: 2px solid #e2e9f6;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(60, 85, 130, 0.12);
+    overflow: hidden;
+    background: #f7f9ff;;
+    cursor: pointer;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.avatar_option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(60, 85, 130, 0.12);
+}
+.avatar_option.selected{
+    border-color: #6d8fc4;
+    box-shadow: 0 0 0 3px #dce8fa;
+    background: #edf3ff;
+}
+
+/*Avatars*/
+/*COMPLETELY TEMPORARY, WE DONT HAVE IMAGES YET!!!!!*/
+.avatar_placeholder{
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #c2d7f3;
+    color: #304b73;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.profile_actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/*Button styling for the avatars page*/
+#back_button{              /*law and order svu s26 ep14 ateez*/
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #a6c1e4;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+#back_button:hover {
+    background-color: #8bb0e0;
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+}
+#back_button:active{
+    transform: scale(0.96);
+}
+#create_profile{
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #a6c1e4;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+#create_profile:hover {
+    background-color: #8bb0e0;
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+}
+#create_profile:active{
+    transform: scale(0.96);
+}
+
+@media (max-width: 520px){
+    .profile_card{
+        padding: 25px 18px;
+    }
+    .profile_card h1{
+        font-size: 28px;
+    }
+    .avatar_placeholder{
+        width: 72px;
+        height: 72px;
+    }
+}
+
+
+
+
+/* Ethics learning page
+.ethics-page {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    background-color: #fffaf7;
+    background-image: linear-gradient(rgba(225, 206, 203, .24) 1px, transparent 1px), linear-gradient(90deg, rgba(225, 206, 203, .24) 1px, transparent 1px);
+    background-size: 28px 28px;
+    color: #2f2b3a;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+.ethics-sidebar {
+    background-color: #302d46;
+    border-right: 5px solid #f3a7b8;
+    color: #fffaf7;
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-mark {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    background-color: #f3a7b8;
+    color: #302d46;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: float-mark 4s ease-in-out infinite;
+}
+
+.side-mark span { color: #fffaf7; }
+.side-label, .eyebrow { font-family: monospace; letter-spacing: 1px; font-size: 11px; }
+.side-label { color: #c9c0e2; margin-top: 18px; }
+.side-line { height: 1px; background-color: #5a5474; margin: 24px 0; }
+.ethics-sidebar nav { display: grid; gap: 10px; }
+.ethics-sidebar nav a { color: #fffaf7; text-decoration: none; font-size: 15px; padding: 12px 10px; border-left: 2px solid transparent; }
+.ethics-sidebar nav a span { color: #aaa2c2; font-family: monospace; margin-right: 12px; }
+.ethics-sidebar nav a { transition: transform .2s ease, background-color .2s ease, border-color .2s ease; }
+.ethics-sidebar nav a:hover, .ethics-sidebar nav a.active { background-color: #45405d; border-left-color: #f3a7b8; transform: translateX(5px); }
+.side-footer { margin-top: auto; color: #c9c0e2; font-family: monospace; font-size: 11px; display: flex; align-items: center; gap: 8px; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background-color: #9fe0c2; box-shadow: 0 0 0 4px rgba(159, 224, 194, .15); animation: pulse-dot 2s ease-in-out infinite; }
+
+.ethics-main { min-height: 100vh; padding: 60px 7vw 70px; }
+.ethics-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; max-width: 1050px; margin: 0 auto 42px; animation: rise-in .7s ease both; }
+.ethics-header .eyebrow, .section-heading .eyebrow, .checklist-section .eyebrow { color: #d36f87; margin-bottom: 10px; }
+.ethics-header h1 { color: #302d46; font-size: clamp(42px, 7vw, 82px); line-height: .95; letter-spacing: -2px; }
+.cursor { color: #ef8ca5; }
+.intro { color: #71697b; font-size: 17px; margin-top: 18px; max-width: 480px; line-height: 1.5; }
+.header-chip { border: 1px solid #d8c6cd; background-color: rgba(255,255,255,.72); padding: 10px 14px; color: #9c7180; font: 11px monospace; white-space: nowrap; animation: soft-pulse 3s ease-in-out 1s infinite; }
+.header-chip strong { color: #4e9b7b; }
+
+.signal-strip { max-width: 1050px; margin: 0 auto 64px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #dacbd0; border-bottom: 1px solid #dacbd0; animation: rise-in .7s .15s ease both; }
+.signal-strip > div { display: grid; grid-template-columns: 36px 1fr; column-gap: 10px; padding: 17px 20px; border-right: 1px solid #dacbd0; }
+.signal-strip > div:last-child { border-right: 0; }
+.signal-icon { grid-row: span 2; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background-color: #f3a7b8; color: #fff; font-size: 20px; animation: float-icon 3s ease-in-out infinite; }
+.signal-strip strong { color: #302d46; font-size: 21px; }
+.signal-strip small { color: #877b89; font-size: 11px; }
+
+.principles-section, .checklist-section { max-width: 1050px; margin: 0 auto 64px; animation: rise-in .7s .3s ease both; }
+.section-heading h2, .checklist-section h2 { color: #302d46; font-size: 30px; margin-bottom: 24px; }
+.principle-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+.principle-card { min-height: 220px; padding: 22px; border: 1px solid rgba(48,45,70,.1); box-shadow: 5px 5px 0 rgba(48,45,70,.08); transition: transform .25s ease, box-shadow .25s ease; }
+.principle-card:hover { transform: translateY(-8px) rotate(-1deg); box-shadow: 8px 12px 0 rgba(48,45,70,.12); }
+.card-pink { background-color: #ffdce3; }.card-mint { background-color: #d8f1e3; }.card-yellow { background-color: #fff0b9; }.card-blue { background-color: #d8eaf5; }
+.card-number { color: #877b89; font: 12px monospace; }
+.principle-card h3 { color: #302d46; font-size: 22px; margin: 36px 0 10px; }
+.principle-card p { color: #5f586b; font-size: 14px; line-height: 1.5; }
+.checklist-section { display: grid; grid-template-columns: .8fr 1.2fr; gap: 35px; padding: 25px; background-color: #302d46; color: #fffaf7; }
+.checklist-section h2 { color: #fffaf7; margin: 0; }
+.checklist { list-style: none; display: grid; gap: 13px; }
+.checklist li { border-bottom: 1px solid #5a5474; padding-bottom: 10px; font-size: 14px; }
+.checklist li span { color: #9fe0c2; margin-right: 10px; font-weight: bold; }
+.checklist li { transition: transform .2s ease, color .2s ease; }
+.checklist li:hover { color: #f3a7b8; transform: translateX(7px); }
+
+@keyframes rise-in {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float-mark {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-5px) rotate(2deg); }
+}
+
+@keyframes float-icon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+@keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(159, 224, 194, .15); }
+    50% { box-shadow: 0 0 0 8px rgba(159, 224, 194, .03); }
+}
+
+@keyframes soft-pulse {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ethics-page *, .ethics-page *::before, .ethics-page *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
+@media (max-width: 760px) {
+    .ethics-sidebar { position: static; width: 100%; height: auto; border-right: 0; border-bottom: 5px solid #f3a7b8; padding: 18px 22px; }
+    .side-label, .side-line, .side-footer { display: none; }
+    .ethics-sidebar nav { display: flex; margin-top: 18px; overflow-x: auto; }
+    .ethics-sidebar nav a { white-space: nowrap; }
+    .ethics-main { margin-left: 0; padding: 42px 22px; }
+    .ethics-header { display: block; }
+    .header-chip { display: inline-block; margin-top: 22px; }
+    .signal-strip, .principle-grid, .checklist-section { grid-template-columns: 1fr; }
+    .signal-strip > div { border-right: 0; border-bottom: 1px solid #dacbd0; }
+    .signal-strip > div:last-child { border-bottom: 0; }
+}
+
+main {
+    margin-left: 250px;
+    padding: 0 0px 40px 0px; /*This is the space between the sidebar and the main content so padding is just a spacing property, first is top, second is right, third is bottom and last is left*/
+
+
+/*#banner { /*TEMPORARY BANNER
+    background-color: #e4a6a6;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}*/
+/*
+#banner {
+    background-image: url("https://i.pinimg.com/736x/8d/68/c4/8d68c416d99ae9998fd8e8267c69cdd6.jpg");
+    background-size: 80%; /*Banner size to zoom in n zoom out*/
+    
+
+/*
+#hero {
+    min-height: 160px;
+    display: flex;
+    justify-content: center; /*These two center stuff the top one centers horizontally*/
+   
+
+
+/*.hero_content{
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.hero_content h2{
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.hero_content p{
+    font-size: 22px;
+    color: #9c8f8f;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: auto;
+    background-color: rgba(255, 250, 248, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+}
+.hero_paragraph{
+    position: relative;
+    max-width: 700px;
+    margin: auto;
+}
+.hero_frame{
+
+    position: absolute;
+    top: -40px;
+    left: -40px;
+
+    width:calc(100% + 80px);
+    height:calc(100% + 80px);
+
+    pointer-events: none;
+    border: 2px solid black;
+
+}

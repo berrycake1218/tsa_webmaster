@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset = "UTF-8">
+        <meta name= "viewport" content= "width = device-width, initial-scale = 1.0">
+    
+        <title>𑣲⋆｡˚Profile Creation⭑.ᐟ</title>
+
+        <link rel= "stylesheet" href = "style/main.css">
+        <script src = "style/scripts/script.js" defer></script>
+
+    </head>
+
+    <body class = "profile_body">
+        <main class = "profile_screen">
+            <section class = "profile_card">
+                
+                <!--USERNAME STEP-->
+                <div id = "username_step" class = "profile_step active">
+                    <h1>Welcome Learner!</h1>
+                    <p class = "step_label">Your journey begins with a username!</p>
+                    <p>What should we call you?</p>
+                    <!--<label for = "username">Choose your username:</label>-->
+
+                    <input type = "text" id = "username" name = "username" placeholder = "Ex. iLoveComputerScience (Max 20 chars, min 3 chars)" maxlength = "20" minlength = "3" required>
+
+                    <p id = "username_error" class = "form_error" role = "alert"></p>
+
+                    <button type = "button" id = "continue_button">Continue</button>
+                </div>
+
+                <!--AVATAR STEP-->
+                <div id = "avatar_step" class = "profile_step">
+                    <h1>Choose Your Avatar</h1>
+                    <p id = "avatar_welcome">Choose a character for your journey.</p>
+
+                    <div class = "avatar_selection">
+
+                        <button type = "button" class = "avatar_option" data-avatar = "avatar1" aria-pressed = "false">
+                            <div class = "avatar_placeholder">A1</div>
+                            <span>Explorer One</span>
+                        </button>
+                        
+                        <button type = "button" class = "avatar_option" data-avatar = "avatar2" aria-pressed = "false">
+                            <div class = "avatar_placeholder">A2</div>
+                            <span>Explorer Two</span>
+                        </button>
+
+                        <button type = "button" class = "avatar_option" data-avatar = "avatar3" aria-pressed = "false">
+                            <div class = "avatar_placeholder">A3</div>
+                            <span>Explorer Three</span>
+                        </button>
+
+                    </div>
+
+                    <p id = "avatar_error" class = "form_error" role = "alert"></p>
+
+                    <div class = "profile_actions">
+                        <button type = "button" id = "back_button">Back</button>
+                        <button type = "button" id = "create_profile">Create Profile!</button>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+        
+    </body>
+
+</html>

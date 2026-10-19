@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset = "UTF-8">
+        <meta name= "viewport" content= "width = device-width, initial-scale = 1.0">
+    
+        <title>𑣲⋆｡˚Learning Website⭑.ᐟ</title>
+
+        <link rel= "stylesheet" href = "style/main.css">
+        <script src = "style/scripts/script.js" defer></script>
+
+    </head>
+
+    <body class = "home_body">
+        <script> <!-- Check if player is saved in localStorage -->
+            const savedPlayer = localStorage.getItem("player");
+            if(!savedPlayer){
+                window.location.href = "profile.html";
+            }
+        </script>
+
+        <aside>
+            <h2>Directory</h2>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">Lessons ▸</a>
+
+                        <ul class="dropdown_menu">
+                            <li><a href="ethics.html">AI Ethics</a></li>
+                            <li><a href="tools.html">AI Tools</a></li>
+                            <li><a href="fundamentals.html">AI Fundamentals</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="minigames.html">Minigames</a></li>
+                    <li><a href="badges.html">Badges</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main> <!-- Main content -->
+            <section id = "banner">
+                <h1> </h1>
+            </section>
+
+            <section id = "hero"> <!-- Hero section -->
+                <div class = "hero_content">
+                    <h2>Welcome!</h2>
+
+                    <div class = "hero_paragraph">
+                            <p>Welcome to the learning website!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+
+</html>
